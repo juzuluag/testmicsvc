@@ -2,7 +2,7 @@
 
 [![.NET](https://github.com/juzuluag/testmicsvc/actions/workflows/dotnet.yml/badge.svg?branch=main)](https://github.com/juzuluag/testmicsvc/actions/workflows/dotnet.yml)
 
-The goal is to generate openapi spec of the `controller`  as part of the build process based on the project's `assembly`. This generation can be done manually, but it opens the windows for high maintenance and also for error prune, since the manual file might not reflect what the service does.
+The goal is to generate openapi spec of the `controller`  as part of the build process based on the project's `assembly`. The spec can be done manually, but it opens the windows for high maintenance and also for error prune, since the manual file might not reflect what the service does.
 This is using `nswag` packages  based on the configuration file `nswag_v1.json` to generate the open api.
 
 ## Add new Project and NSwag dependencies
