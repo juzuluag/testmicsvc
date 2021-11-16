@@ -22,7 +22,7 @@ dotnet add package Swashbuckle.AspNetCore.Annotations --version 6.2.3
 dotnet build
 ```
 
-It would create `openapi_v1.json` openapi spec with what the `controller` is about. This file can be publish as an artifact of the CI pipeline in order to be consumed by a client.
+It would create `openapi_v1.json` openapi spec with what the `controller` is about. This file can be publish as an artifact of the CI pipeline in order to be consumed by a client. An easy way to look at the api is to use for instance [Swagger Editor](https://editor.swagger.io) and check the endpoints.
 
 ![image info](./images/gen_openapi.png)
 
@@ -33,3 +33,5 @@ It would create `openapi_v1.json` openapi spec with what the `controller` is abo
 <https://blog.rsuter.com/versioned-aspnetcore-apis-with-openapi-generation-and-azure-api-management/>
 
 <https://github.com/RicoSuter/NSwag>
+
+<https://editor.swagger.io>
