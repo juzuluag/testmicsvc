@@ -24,4 +24,5 @@ It would create a file `openapi_v1.json` with the basic information about the `c
 ## References
 
 <https://kaylumah.nl/2021/05/23/generate-csharp-client-for-openapi.html>
+
 <https://blog.rsuter.com/versioned-aspnetcore-apis-with-openapi-generation-and-azure-api-management/>
