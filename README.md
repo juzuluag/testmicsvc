@@ -22,7 +22,9 @@ dotnet add package Swashbuckle.AspNetCore.Annotations --version 6.2.3
 dotnet build
 ```
 
-It would create a file `openapi_v1.json` with the basic information about the `controller`
+It would create `openapi_v1.json` openapi spec with what the `controller` is about. This file can be publish as an artifact of the CI pipeline in order to be consumed by a client.
+
+![image info](./images/gen_openapi.png)
 
 ## References
 
