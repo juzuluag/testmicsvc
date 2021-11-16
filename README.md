@@ -8,6 +8,7 @@ This is using `nswag` packages  based on the configuration file `nswag_v1.json` 
 ```sh
 dotnet new webapi -n WebApp
 dotnet new gitignore
+cd WebApp
 dotnet add package NSwag.MSBuild --version 13.14.4
 dotnet add package NSwag.AspNetCore
 dotnet add package Swashbuckle.AspNetCore.Annotations --version 6.2.3
