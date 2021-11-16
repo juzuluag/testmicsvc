@@ -16,7 +16,6 @@
 
   <Target Name="NSwag" AfterTargets="Build">
     <Exec Command="$(NSwagExe_Net50) run nswag_v1.json /variables:Configuration=$(Configuration)" />
-    <!-- <Exec Command="$(NSwagExe_Net50) run nswag_v2.json /variables:Configuration=$(Configuration)" /> -->
   </Target>
 
 </Project>
