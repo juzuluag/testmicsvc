@@ -8,6 +8,8 @@ This is using `nswag` packages based on the configuration file `nswag_v1.json` t
 ## Setup Project
 
 ```sh
+dotnet --version
+5.0.302
 dotnet new webapi -n WebApp
 dotnet new gitignore
 cd WebApp
