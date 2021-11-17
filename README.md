@@ -23,16 +23,16 @@ dotnet build
 ```
 
 It would create `openapi_v1.json` openapi spec with what the `controller` is about. This file can be publish as an artifact of the CI pipeline in order to be consumed by a client. An easy way to look at the api is to use for instance [Swagger Editor](https://editor.swagger.io) and check the endpoints.
-
+Below is an illustration of how the openapi spec is created and how a client can take advantage of the artifact generated.
 ![genopenapi](./images/gen_openapi.png)
 
-## Controller
+## Controller Example
 
 `WeatherForecastController` example has two methods (`GET` and `POST`) that contains annotations in order to have better coverage of what the api would do. This way the consumer of it will be aware of.
 
-The following `C#` code from the controller illustrates a `GET` method that creates an enumarable with specific `WeatherForecast` instances.
+The following snipped code from the controller illustrates a `GET` method that creates an enumerable with specific `WeatherForecast` instances.
 
-```csharp
+```c#
         [HttpGet]
         [SwaggerResponse((int)HttpStatusCode.OK, Type=typeof(IEnumerable<WeatherForecast>))]
         [SwaggerResponse((int)HttpStatusCode.NotFound, Description = "Forecast not found")]
@@ -42,7 +42,7 @@ The following `C#` code from the controller illustrates a `GET` method that crea
         }
 ```
 
-Below is an extract of openapi spec output generated as part of the build process.
+After running `dotnet build` on the project `openapi_v1.json` is create. Below is an extract of the `GET` method.
 
 ```json
 ...
@@ -76,8 +76,10 @@ Below is an extract of openapi spec output generated as part of the build proces
 
 ```
 
-The output can be checked also using a `Swagger Editor` like the picture below
+This output can be checked also using a `Swagger Editor` like the picture below to have an idea how the api is going to look like.
 ![swaggereditor](./images/swagger_editor.png)
+
+After all these points, avoiding to **manually** creating the api spec is the ideal case, avoiding to enter into an error prune scenario where the service and the consumer can be out-of-sync pretty easily.
 
 ## References
 
