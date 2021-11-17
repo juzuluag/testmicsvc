@@ -86,7 +86,7 @@ The image below shows how the artifact would be located after CI runs.
 ![artifact](./images/artifact.png)
 
 
-After all these points, avoiding to **manually** creating the api spec is the ideal case, avoiding to enter into an error prune scenario where the service and the consumer can be out-of-sync pretty easily.
+After all these points, avoiding to **manually** creating the api spec is the ideal case, eliminating to enter into an error prune scenario where the service and the consumer can be out-of-sync pretty easily.
 
 ## References
 
