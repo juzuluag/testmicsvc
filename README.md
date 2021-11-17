@@ -24,7 +24,60 @@ dotnet build
 
 It would create `openapi_v1.json` openapi spec with what the `controller` is about. This file can be publish as an artifact of the CI pipeline in order to be consumed by a client. An easy way to look at the api is to use for instance [Swagger Editor](https://editor.swagger.io) and check the endpoints.
 
-![image info](./images/gen_openapi.png)
+![genopenapi](./images/gen_openapi.png)
+
+## Controller
+
+`WeatherForecastController` example has two methods (`GET` and `POST`) that contains annotations in order to have better coverage of what the api would do. This way the consumer of it will be aware of.
+
+The following `C#` code from the controller illustrates a `GET` method that creates an enumarable with specific `WeatherForecast` instances.
+
+```csharp
+        [HttpGet]
+        [SwaggerResponse((int)HttpStatusCode.OK, Type=typeof(IEnumerable<WeatherForecast>))]
+        [SwaggerResponse((int)HttpStatusCode.NotFound, Description = "Forecast not found")]
+        public IEnumerable<WeatherForecast> Get()
+        {
+            ...
+        }
+```
+
+Below is an extract of openapi spec output generated as part of the build process.
+
+```json
+...
+"paths": {
+    "/WeatherForecast": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "operationId": "WeatherForecast_Get",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Forecast not found"
+          }
+        }
+      },
+  ...
+
+```
+
+The output can be checked also using a `Swagger Editor` like the picture below
+![swaggereditor](./images/swagger_editor.png)
 
 ## References
 

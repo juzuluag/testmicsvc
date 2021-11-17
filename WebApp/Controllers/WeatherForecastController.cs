@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Annotations;
@@ -25,7 +26,8 @@ namespace WebApp.Controllers
         }
 
         [HttpGet]
-        [SwaggerResponse(200, Type=typeof(IEnumerable<WeatherForecast>))]
+        [SwaggerResponse((int)HttpStatusCode.OK, Type=typeof(IEnumerable<WeatherForecast>))]
+        [SwaggerResponse((int)HttpStatusCode.NotFound, Description = "Forecast not found")]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
@@ -36,6 +38,14 @@ namespace WebApp.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        [HttpPost]
+        [SwaggerResponse((int)HttpStatusCode.Created, Description = "The tracker was successfully created.")]
+        [SwaggerResponse((int)HttpStatusCode.InternalServerError, Description = "Internal Error")]
+        public IActionResult CreateTracker([FromBody] int tracker)
+        {
+            throw new NotImplementedException("");
         }
     }
 }
