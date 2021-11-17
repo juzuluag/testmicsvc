@@ -83,6 +83,7 @@ This output can be checked also using a `Swagger Editor` like the picture below 
 
 As part of these steps, a simple `CI` [dotnet.yml](https://github.com/juzuluag/testmicsvc/blob/main/.github/workflows/dotnet.yml) file illustrates how to build the project and also how to push for the generated file as an artifact
 The image below shows how the artifact would be located after CI runs.
+![artifact](./images/artifact.png)
 
 
 After all these points, avoiding to **manually** creating the api spec is the ideal case, avoiding to enter into an error prune scenario where the service and the consumer can be out-of-sync pretty easily.
