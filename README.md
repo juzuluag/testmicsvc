@@ -2,8 +2,8 @@
 
 [![.NET](https://github.com/juzuluag/testmicsvc/actions/workflows/dotnet.yml/badge.svg?branch=main)](https://github.com/juzuluag/testmicsvc/actions/workflows/dotnet.yml)
 
-The goal is to generate openapi spec of the `controller`  as part of the build process based on the project's `assembly`. The spec can be done manually, but it opens the windows for high maintenance and also for error prune, since the manual file might not reflect what the service does.
-This is using `nswag` packages  based on the configuration file `nswag_v1.json` to generate the open api.
+The goal of this README is to illustrate how an openapi spec can be build based on the project's `assembly` file. The spec can be done **manually**, but it opens the windows for high code maintenance and also for error prune, since the manual file might not reflect what the service is capable of.
+This is using `nswag` packages  based on the configuration file `nswag_v1.json` to generate the api.
 
 ## Add new Project and NSwag dependencies
 
@@ -78,6 +78,12 @@ After running `dotnet build` on the project `openapi_v1.json` is create. Below i
 
 This output can be checked also using a `Swagger Editor` like the picture below to have an idea how the api is going to look like.
 ![swaggereditor](./images/swagger_editor.png)
+
+## CI
+
+As part of these steps, a simple `CI` [dotnet.yml](https://github.com/juzuluag/testmicsvc/blob/main/.github/workflows/dotnet.yml) file illustrates how to build the project and also how to push for the generated file as an artifact
+The image below shows how the artifact would be located after CI runs.
+
 
 After all these points, avoiding to **manually** creating the api spec is the ideal case, avoiding to enter into an error prune scenario where the service and the consumer can be out-of-sync pretty easily.
 

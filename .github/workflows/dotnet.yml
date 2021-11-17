@@ -32,6 +32,6 @@ jobs:
     - name: 'Upload Artifact'
       uses: actions/upload-artifact@v2
       with:
-        name: weather_openapi_v1.json
+        name: openapi_v1.json
         path: WebApp/openapi_v1.json
         retention-days: 5
