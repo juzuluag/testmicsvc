@@ -20,12 +20,14 @@ dotnet add package Swashbuckle.AspNetCore.Annotations --version 6.2.3
 
 ### nswag run
 
-In order to generate the spec at build time, make sure to enhance the project file `*.cspj` by adding a `Target` entry.
+In order to generate the spec at build time, make sure to enhance the project file `WebApp.csproj` by adding a `Target` entry.
 
 ```xml
+...
 <Target Name="NSwag" AfterTargets="Build">
     <Exec Command="$(NSwagExe_Net50) run nswag_v1.json /variables:Configuration=$(Configuration)" />
 </Target>
+...
 ```
 
 ## Build Project
