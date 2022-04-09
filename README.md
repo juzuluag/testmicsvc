@@ -5,6 +5,7 @@
 The goal of this README is to illustrate how an openapi spec can be build based on the project's `assembly` file. The spec can be done **manually**, but it opens the windows for high code maintenance and also for error prune, since the manual file might not reflect what the service is capable of.
 This is using `nswag` packages based on the configuration file `nswag_v1.json` to generate the api.
 
+
 ## Setup Project
 
 ```sh
